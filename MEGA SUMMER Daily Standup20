@@ -1,0 +1,37 @@
+
+Lost number in number sequence
+522590% of 9871,568 of 5,366evgv
+JavaScript
+TRAIN AGAINNEXT KATA
+Details
+Solutions
+Forks (6)
+Discourse (83)
+Translations
+Collect|
+An ordered sequence of numbers from 1 to N is given. One number might have deleted from it, then the remaining numbers were mixed. Find the number that was deleted.
+
+Example:
+
+The starting array sequence is [1,2,3,4,5,6,7,8,9]
+The mixed array with one deleted number is [3,2,4,6,7,8,1,9]
+Your function should return the int 5.
+If no number was deleted from the array and no difference with it, your function should return the int 0.
+
+Note: N may be 1 or less (in the latter case, the first array will be []).
+
+ALGORITHMSARRAYS
+
+function findDeletedNumber(arr, mixArr) {
+  // your code
+  const sorted=mixArr.sort((a,b)=>a-b)
+  return arr.filter(item=> mixArr.sort((a,b)=>a-b).indexOf(item)===-1?item:0)[0]||0
+
+}
+
+function findDeletedNumber(arr, mixArr) {
+  // your code
+ 
+  return arr.reduce((acc,val)=>acc+val,0)- mixArr.reduce((acc,val)=>acc+val,0)
+
+}
