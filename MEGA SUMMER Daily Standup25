@@ -1,3 +1,13 @@
+Given a string of characters, retun the character that apppears the most often 
+
+describe ("Max character",()=>{
+if("Should return max character",()=>{
+assert.equal(max("hellow orld!"),"l");
+});
+});
+
+No String or Array methods(brute force first)
+
 function mostOften(){
    const characters={}
    for (let char of str){
