@@ -58,3 +58,19 @@ function majorityElement(nums){
 
     return Object.keys(obj).filter(key => obj[key] > nums.length/2 && key)
 }
+
+//znother way
+
+const majority = (arr) => {
+  let elements = {}
+  let target = arr.length / 2
+  let result
+
+  for (el of arr) {
+    elements[el] = elements[el] + 1 || 1
+    if (elements[el] > target) {
+      return (result = el)
+    }
+  }
+  return result
+}
