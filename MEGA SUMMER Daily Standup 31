@@ -22,3 +22,39 @@ n == nums.length
 1 <= n <= 5 * 104
 -231 <= nums[i] <= 231 - 1
  
+var majorityElement = function(nums) {
+  let elem = {},
+        count = 0,
+        majVal = nums[0]
+  
+  for(let i = 0; i < nums.length; i++){
+    if(!elem[nums[i]]){
+      elem[nums[i]] = 1
+    }else{
+      elem[nums[i]]++
+    }
+  }
+
+  for(const prop in elem){
+    if(elem[prop] > count){
+      count = elem[prop]
+      majVal = prop
+    }
+  }
+
+  return majVal  
+};
+
+console.log((majorityElement([6,5,5])))
+
+
+//using objects
+function majorityElement(nums){
+    let obj = {}
+
+    nums.forEach(n =>{
+        n in obj ? obj[n]++ : obj[n] = 1
+    })
+
+    return Object.keys(obj).filter(key => obj[key] > nums.length/2 && key)
+}
