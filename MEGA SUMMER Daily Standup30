@@ -40,3 +40,17 @@ function maxProfit(prices){
   }
   return max
 }
+
+
+
+var maxProfit = function(prices) {
+    let max = 0; 
+    let min = Math.pow(10, 4) + 100; //because 0 <= prices[i] <= 10^4 is a constraint
+        
+    for(let i=0; i<prices.length; i++){
+        max = Math.max(max, prices[i]-min)
+        min = Math.min(min, prices[i])
+    }
+    return max;
+};
+
